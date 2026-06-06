@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import LandingView from './LandingView';
 import QuizView from './QuizView';
 import ResultView from './ResultView';
@@ -45,6 +46,7 @@ export default function App() {
         {view === 'result' && <ResultView answers={answers} onRestart={handleRestart} />}
       </div>
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
