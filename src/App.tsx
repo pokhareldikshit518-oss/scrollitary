@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import LandingView from './LandingView';
 import QuizView from './QuizView';
 import ResultView from './ResultView';
@@ -43,6 +44,7 @@ export default function App() {
         {view === 'quiz' && <QuizView onComplete={handleComplete} />}
         {view === 'result' && <ResultView answers={answers} onRestart={handleRestart} />}
       </div>
+      <Analytics />
     </div>
   );
 }
