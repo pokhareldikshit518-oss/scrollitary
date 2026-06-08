@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Analytics } from '@vercel/analytics/react';
 import LandingView from './LandingView';
 import QuizView from './QuizView';
 import ResultView from './ResultView';
+import AboutView from './AboutView';
+import ContactView from './ContactView';
 import { type QuizAnswers } from './quizData';
 
-type AppView = 'landing' | 'quiz' | 'result';
+type AppView = 'landing' | 'quiz' | 'result' | 'about' | 'contact';
 
 export default function App() {
   const [view, setView] = useState<AppView>('landing');
@@ -36,15 +37,15 @@ export default function App() {
   return (
     <div className="scanlines noise bg-charcoal min-h-screen font-display">
       <div
-        className={`transition-all duration-300 ${
-          transitioning ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'
-        }`}
+        className={`transition-all duration-300 ${transitioning ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'
+          }`}
       >
-        {view === 'landing' && <LandingView onStart={handleStart} />}
+        {view === 'landing' && <LandingView onStart={handleStart} onAbout={() => transition('about')} onContact={() => transition('contact')} />}
         {view === 'quiz' && <QuizView onComplete={handleComplete} />}
         {view === 'result' && <ResultView answers={answers} onRestart={handleRestart} />}
+        {view === 'about' && <AboutView onBack={() => transition('landing')} />}
+        {view === 'contact' && <ContactView onBack={() => transition('landing')} />}
       </div>
-      <Analytics />
     </div>
   );
 }
