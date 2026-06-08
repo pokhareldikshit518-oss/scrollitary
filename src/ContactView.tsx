@@ -74,7 +74,7 @@ export default function ContactView({ onBack }: ContactViewProps) {
               <Mail size={20} className="text-neon-pink" />
               <span className="text-sm font-mono text-gray-400">Email</span>
             </div>
-            <p className="text-white text-sm break-all">contact@example.com</p>
+            <p className="text-white text-sm break-all">pokharedikshit518@gmail.com</p>
           </div>
 
           <div className="p-4 rounded border border-neon-green/20 bg-neon-green/5 backdrop-blur-sm">
@@ -82,7 +82,7 @@ export default function ContactView({ onBack }: ContactViewProps) {
               <Phone size={20} className="text-neon-green" />
               <span className="text-sm font-mono text-gray-400">Phone</span>
             </div>
-            <p className="text-white text-sm">+1 (555) 123-4567</p>
+            <p className="text-white text-sm">+977 9842041963</p>
           </div>
 
           <div className="p-4 rounded border border-neon-pink/20 bg-neon-pink/5 backdrop-blur-sm">
@@ -90,7 +90,7 @@ export default function ContactView({ onBack }: ContactViewProps) {
               <MapPin size={20} className="text-neon-pink" />
               <span className="text-sm font-mono text-gray-400">Location</span>
             </div>
-            <p className="text-white text-sm">San Francisco, CA</p>
+            <p className="text-white text-sm">Biratnagar , Nepal</p>
           </div>
         </div>
 
