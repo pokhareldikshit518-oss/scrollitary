@@ -2,9 +2,11 @@ import { Zap, AlertTriangle, Skull } from 'lucide-react';
 
 interface LandingViewProps {
   onStart: () => void;
+  onAbout: () => void;
+  onContact: () => void;
 }
 
-export default function LandingView({ onStart }: LandingViewProps) {
+export default function LandingView({ onStart, onAbout, onContact }: LandingViewProps) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
       {/* Background grid */}
@@ -117,6 +119,25 @@ export default function LandingView({ onStart }: LandingViewProps) {
         >
           No sign-up required. Spine examination not included.
         </p>
+
+        {/* Footer Navigation */}
+        <div className="mt-16 pt-8 border-t border-neon-pink/20 flex flex-col items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+            <button
+              onClick={onAbout}
+              className="px-4 py-2 rounded border border-neon-pink/30 text-neon-pink hover:border-neon-pink/60 hover:text-white transition-colors font-mono"
+            >
+              About Us
+            </button>
+            <button
+              onClick={onContact}
+              className="px-4 py-2 rounded border border-neon-green/30 text-neon-green hover:border-neon-green/60 hover:text-white transition-colors font-mono"
+            >
+              Contact Us
+            </button>
+          </div>
+          <p className="text-xs font-mono text-white/25">© 2024 Scrollitary. All rights reserved.</p>
+        </div>
       </div>
 
       {/* Decorative corner elements */}
